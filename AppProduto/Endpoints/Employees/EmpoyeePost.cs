@@ -17,7 +17,7 @@ public class EmployeePost
         if (!result.Succeeded)
             return Results.ValidationProblem(result.Errors.ConvertToProblemDetails());
 
-       /* var userClaims = new List<Claim>
+        var userClaims = new List<Claim>
         {
             new Claim("EmployeeCode", employeeRequest.EmployeeCode),
             new Claim("Name", employeeRequest.Name)
@@ -25,9 +25,9 @@ public class EmployeePost
 
         var claimResult =
             userManager.AddClaimsAsync(user, userClaims).Result;
-       */
-        if (!result.Succeeded)
-            return Results.BadRequest(result.Errors.First());
+       
+        if (!claimResult.Succeeded)
+            return Results.BadRequest(claimResult.Errors.First());
 
         return Results.Created($"/employees/{user.Id}", user.Id);
     }

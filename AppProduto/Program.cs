@@ -35,4 +35,10 @@ app.MapMethods(CategoryPut.Template, CategoryPut.Methods, CategoryPut.Handle);
 app.MapMethods(EmployeePost.Template, EmployeePost.Methods, EmployeePost.Handle);
 app.MapMethods(EmployeeGetAll.Template, EmployeeGetAll.Methods, EmployeeGetAll.Handle);
 
+
+// para salvar o usuario passo o seguinte json
+/*
+ * { "Email": "samael.simoe1886@gmail.com", "Password": "123456", "Name": "Samael simoes", "EmployeeCode": "005"}
+ */
+
 app.Run();
